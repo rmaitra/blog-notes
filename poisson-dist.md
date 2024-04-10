@@ -7,7 +7,7 @@ Let's simplify the problem: considering two intersections, each with rates of tr
 Let's gather the parameters of the problem:
 1. there is 1 officer (the observer)
 2. there are 2 locations, point A and point B
-3. each location has a mean probability rate of traffice violations per hour: let's assume each is the same at a mean rate of 10 violations per hour
+3. there is a 10% chance of a violation occurring at each location per hour
 
 In order to solve this problem, we will have to use a poisson distribution. The Poisson distribution deals with the frequency with which an event occurs within a specific interval. The poisson distribution is as follows:
 
@@ -23,3 +23,18 @@ Where:
 
 
 Is the probability of observing a traffic violation higher if the officer splits time between two locations or stays at the same location?
+
+The probability of seeing at least 1 violation at point A location over 10 hours is:
+```math
+P(A)=1-(P_{no-violation})^{t}
+```
+```math
+P_{no-violation} = 1 - 0.1 = 0.9
+```
+```math
+t = 10
+```
+```math
+P(A) = 1-(0.9)^{10} = 0.651
+```
+There's a 65.1% chance of observing a violation at one location (in this instance point A) if the officer spends all 10 hours there.
